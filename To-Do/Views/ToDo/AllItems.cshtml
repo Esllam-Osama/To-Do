@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Http
+@model List<Mission>
+@{
+   
+    ViewData["Title"] = "All Items";
+    var cookieValue = Context.Request.Cookies["name"];
+}
+
+<h2>
+    Welcome, @cookieValue
+</h2>
+<p class="text-secondary fw-medium" style="font-size:13px;">here is your To-Do list</p>
+<a href="/ToDo/CreateNew" class="btn btn-success">Create New <i class="fa-solid fa-plus"></i> </a>
+<table class="table table-striped text-center table-bordered mt-2">
+    <thead class="border-bottom ">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>DeadLine</th>
+            <th>Download</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var m in Model)
+        {
+            <tr>
+                <td>@m.Title</td>
+                <td>@m.Description</td>
+                <td>@m.Deadline</td>
+                <td><a href="~/files/@m.FileUrl" class="btn btn-primary" download>Download File</a></td>
+                <td>
+                    <a href="/ToDo/Eddit?id=@m.Id" class="btn btn-warning">Eddit</a>
+                    <a href="/ToDo/Delete?id=@m.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

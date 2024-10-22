@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["title"] = "Create User";
+}
+    <h2 class="fw-bold">Create New To-Do item</h2>
+<form action="/ToDo/SaveCooke" method="post">
+    <label for="name" class="form-label">Your Name:</label>
+  <input type="text" required name="name" class="form-control" />  
+  <p class="text-secondary" style="font-size:12px;">we are save your name in cookie(1 day)</p>
+  <hr />
+  <input type="submit" class="btn btn-primary" value="submit" />
+</form>

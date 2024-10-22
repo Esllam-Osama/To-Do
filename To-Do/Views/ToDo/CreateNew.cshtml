@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["title"] = "New Mission";
+}
+
+<div class="w-50 mx-auto mt-2 border shadow px-3 py-4 rounded-4">
+    <div class="text-center">
+        <h2 class="fw-bold">
+            Create New
+        </h2>
+        <h5 class="fw-medium">List Item</h5>
+        <hr />
+    </div>
+    <form action="/ToDo/CreateNew" method="post" enctype="multipart/form-data">
+        <div class="mb-1">
+            <label class="form-label fw-medium ms-2" for="Title">Title:</label>
+            <input type="text" class="form-control border border-2" name="Title" id="Title" />
+        </div>
+        <div class="mb-1">
+            <label class="form-label fw-medium ms-2" for="Description">Description:</label>
+            <input type="text" class="form-control border border-2" name="Description" id="Description" />
+        </div>
+        <div class="mb-1">
+            <label class="form-label fw-medium ms-2" for="Deadline">Deadline:</label>
+            <input type="datetime-local" class="form-control border border-2" name="Deadline" id="Deadline" />
+        </div>
+        <div class="mb-1">
+            <label class="form-label fw-medium ms-2" for="File">File:</label>
+            <input type="file" class="form-control border border-2" name="FileUrl" id="File" />
+        </div>
+        <div class="text-center mt-3">
+            <input type="submit" class="btn btn-primary" value="submit" />
+        </div>
+    </form>
+</div>
